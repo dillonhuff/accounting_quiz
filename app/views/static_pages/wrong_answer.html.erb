@@ -1,0 +1,13 @@
+<div class="center jumbotron">
+
+  <h1>Accounting Practice Problems</h1>
+
+  <p> <%= @problem_text %> </p>
+  <p> Your answer: <%= @user_answer %> </p>
+  <p> Correct answer <%= @problem_answer %> </p>
+
+
+  <%= form_tag( { :action => :home, }, { :method => :get }) %>
+  <%= button_tag "new problem" %>
+
+</div>

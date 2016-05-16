@@ -2,8 +2,10 @@
 
   <h1>Accounting Practice Problems</h1>
 
-  <p> There is no button you fool! </p>
+  <p> <%= @problem_text %> </p>
 
+  <%= form_tag( { :action => :submit_answer, }, { :method => :post }) %>
+  <%= text_field_tag "user_answer" %>
 </div>
 
 
