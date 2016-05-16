@@ -5,6 +5,7 @@
   <p> <%= @problem_text %> </p>
 
   <%= form_tag( { :action => :submit_answer, }, { :method => :post }) %>
+  <%= hidden_field_tag "correct_answer", @correct_answer %>
   <%= text_field_tag "user_answer" %>
 </div>
 
