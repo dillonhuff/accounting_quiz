@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
     @user_answer = Integer(params[:user_answer])
     @correct_answer = Integer(params[:correct_answer])
     if @user_answer == @correct_answer
-      home()
+      render :right_answer
     else
       render :wrong_answer
     end

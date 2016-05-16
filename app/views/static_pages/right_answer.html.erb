@@ -3,8 +3,8 @@
   <h1>Accounting Practice Problems</h1>
 
   <p> <%= @problem_text %> </p>
-  <p> Your answer, <%= @user_answer %>, is wrong </p>
-  <p> The correct answer is <%= @correct_answer %> </p>
+  <p> Your answer: <%= @user_answer %> </p>
+  <p> is correct! </p>
 
   <%= form_tag( { :action => :home, }, { :method => :get }) %>
   <%= button_tag "new problem" %>
