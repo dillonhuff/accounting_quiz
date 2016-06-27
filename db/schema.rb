@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627041518) do
+ActiveRecord::Schema.define(version: 20160627052652) do
+
+  create_table "predictions", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "pundit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pundits", force: :cascade do |t|
     t.string   "name"
