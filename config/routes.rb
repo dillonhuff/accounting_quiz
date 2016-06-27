@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get '/home' => 'static_pages#home'
   get '/about' =>'static_pages#about'
-  get '/pundits' => 'static_pages#pundits'
   get '/events' => 'static_pages#events'
 
   # The priority is based upon order of creation: first created -> highest priority.
