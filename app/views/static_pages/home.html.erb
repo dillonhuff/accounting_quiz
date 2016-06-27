@@ -1,32 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-	<title> Pundit Rank </title>
-	<%= stylesheet_link_tag 'application', media: 'all',
-        'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
-	<!--[if lt IE 9]>
-	    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-	    </script>
-	<![endif]-->
-    </head>
-    <body>
-	<header class="navbar navbar-fixed-top navbar-inverse">
-	    <div class="container">
-		<%= link_to "Pundit Rank", '#', id: "logo" %>
-		<nav>
-		    <ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Home",   '#' %></li>
-			<li><%= link_to "About",   '#' %></li>
-			<li><%= link_to "Pundits", '#' %></li>
-			<li><%= link_to "Predictions", '#' %></li>
-		    </ul>
-		</nav>
-	    </div>
-	</header>
-	<div class="container">
-	    <%= yield %>
-	</div>
-    </body>
-</html>
+<div class="center jumbotron">
+    <h1>Welcome to Pundit Rank</h1>
+
+    <%= link_to "About", '/about', class: "btn btn-lg btn-primary" %>
+    <%= link_to "Pundits", '/pundits', class: "btn btn-lg btn-primary" %>
+    <%= link_to "Events", '/events', class: "btn btn-lg btn-primary" %>
+</div>
