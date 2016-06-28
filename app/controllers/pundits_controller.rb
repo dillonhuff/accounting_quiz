@@ -10,6 +10,7 @@ class PunditsController < ApplicationController
   # GET /pundits/1
   # GET /pundits/1.json
   def show
+    @prediction = @pundit.predictions.create(content: "No real content")
   end
 
   # GET /pundits/new

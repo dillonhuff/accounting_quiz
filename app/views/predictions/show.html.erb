@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @prediction.content %>
+    <strong>Pundit:</strong>
+    <%= @prediction.pundit.name %>
 </p>
 
 <p>
-  <strong>Pundit:</strong>
-  <%= @prediction.pundit_id %>
+  <strong>Prediction:</strong>
+  <%= @prediction.content %>
 </p>
 
 <%= link_to 'Edit', edit_prediction_path(@prediction) %> |

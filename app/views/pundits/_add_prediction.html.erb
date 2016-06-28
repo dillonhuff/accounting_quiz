@@ -1,0 +1,21 @@
+<%= form_for(@prediction) do |f| %>
+    <% if @prediction.errors.any? %>
+	<div id="error_explanation">
+	    <h2><%= pluralize(@pundit.errors.count, "error") %> prohibited this pundit from being saved:</h2>
+
+	    <ul>
+		<% @pundit.errors.full_messages.each do |message| %>
+		    <li><%= message %></li>
+		<% end %>
+	    </ul>
+	</div>
+    <% end %>
+
+    <div class="field">
+	<%= f.text_field :content %>
+	<%= f.hidden_field :pundit_id, :value => @pundit.id %>
+    </div>
+    <div class="actions">
+	<%= f.submit %>
+    </div>
+<% end %>

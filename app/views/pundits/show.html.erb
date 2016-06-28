@@ -1,9 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @pundit.name %>
+    <strong>Name:</strong>
+    <%= @pundit.name %>
 </p>
+
+<p>
+    <strong># of predictions:</strong>
+    <%= @pundit.predictions.length %>
+</p>
+
+<p>
+    <% @pundit.predictions.each do |t| %>
+	<%= t.content %>
+	</br>
+
+    <% end %>
+</p>
+
+<%= render 'add_prediction' %>
 
 <%#= link_to 'Edit', edit_pundit_path(@pundit) %> |
 <%= link_to 'Back', pundits_path %>
