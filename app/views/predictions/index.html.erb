@@ -15,10 +15,10 @@
     <% @predictions.each do |prediction| %>
       <tr>
         <td><%= prediction.content %></td>
-        <td><%= prediction.pundit_id %></td>
+        <td><%= prediction.pundit.name %></td>
         <td><%= link_to 'Show', prediction %></td>
-        <td><%= link_to 'Edit', edit_prediction_path(prediction) %></td>
-        <td><%= link_to 'Destroy', prediction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Edit', edit_prediction_path(prediction) %></td>
+             <td><%= link_to 'Destroy', prediction, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
