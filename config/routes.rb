@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :base_plates
   resources :predictions
   resources :pundits
   root 'static_pages#home'

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627052652) do
+ActiveRecord::Schema.define(version: 20160629031339) do
+
+  create_table "base_plates", force: :cascade do |t|
+    t.float    "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "predictions", force: :cascade do |t|
     t.text     "content"
