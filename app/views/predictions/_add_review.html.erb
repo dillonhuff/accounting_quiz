@@ -15,7 +15,7 @@
 	<%= f.label 'Rating (0 - 100)' %>
 	<%= f.number_field :rating %>
 	<%= f.label 'Review' %>
-	<%= f.text_field :content %>
+	<%= f.text_area :content %>
 	<%= f.hidden_field :prediction_id, :value => @prediction.id %>
     </div>
     <div class="actions">
