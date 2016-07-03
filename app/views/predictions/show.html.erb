@@ -10,5 +10,18 @@
   <%= @prediction.content %>
 </p>
 
+<p>
+    <strong>Reviews</strong>
+    <% @reviews.each do |review| %>
+	<tr>
+	    <td><%= review.rating %></td>
+            <td><%= review.content %></td>
+	</tr>
+    <% end %>
+</p>
+
+<p>
+    <%= render 'add_review'  %>
+</p>
 <%#= link_to 'Edit', edit_prediction_path(@prediction) %> |
 <%= link_to 'Back', predictions_path %>

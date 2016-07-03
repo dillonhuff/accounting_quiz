@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629031339) do
+ActiveRecord::Schema.define(version: 20160630211419) do
 
   create_table "base_plates", force: :cascade do |t|
     t.float    "height"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20160629031339) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "prediction_id"
+    t.integer  "rating"
+    t.string   "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

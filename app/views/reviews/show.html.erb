@@ -2,7 +2,7 @@
 
 <p>
   <strong>Prediction:</strong>
-  <%= @review.prediction_id %>
+  <%= @review.prediction.content %>
 </p>
 
 <p>
@@ -11,9 +11,6 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Review:</strong>
   <%= @review.content %>
 </p>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>

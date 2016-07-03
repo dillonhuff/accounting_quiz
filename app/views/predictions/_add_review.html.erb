@@ -1,0 +1,24 @@
+<%= form_for(@review) do |f| %>
+    <% if @review.errors.any? %>
+	<div id="error_explanation">
+	    <h2><%= pluralize(@prediction.errors.count, "error") %> prohibited this pundit from being saved:</h2>
+
+	    <ul>
+		<% @prediction.errors.full_messages.each do |message| %>
+		    <li><%= message %></li>
+		<% end %>
+	    </ul>
+	</div>
+    <% end %>
+
+    <div class="field">
+	<%= f.label 'Rating (0 - 100)' %>
+	<%= f.number_field :rating %>
+	<%= f.label 'Review' %>
+	<%= f.text_field :content %>
+	<%= f.hidden_field :prediction_id, :value => @prediction.id %>
+    </div>
+    <div class="actions">
+	<%= f.submit %>
+    </div>
+<% end %>

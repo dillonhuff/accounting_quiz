@@ -10,6 +10,8 @@ class PredictionsController < ApplicationController
   # GET /predictions/1
   # GET /predictions/1.json
   def show
+    @reviews = @prediction.reviews;
+    @review = @prediction.reviews.build()
   end
 
   # GET /predictions/new
