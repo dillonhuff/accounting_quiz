@@ -1,5 +1,53 @@
+<script type="text/javascript">
+ /**
+  * Converts integer to a hexidecimal code, prepad's single 
+  * digit hex codes with 0 to always return a two digit code. 
+  * 
+  * @param {Integer} i Integer to convert 
+  * @returns {String} The hexidecimal code
+  */
+ function intToHex(i) {
+     var hex = parseInt(i).toString(16);
+     return (hex.length < 2) ? "0" + hex : hex;
+ }
+
+ /**
+  * Return hex color from scalar *value*.
+  *
+  * @param {float} value Scalar value between 0 and 1
+  * @return {String} color
+  */
+ function makeColor(value) {
+     // value must be between [0, 510]
+     value = Math.min(Math.max(0,value), 1) * 100;
+
+     var redValue;
+     var greenValue;
+     if (value < 255) {
+         redValue = 255;
+         greenValue = Math.sqrt(value) * 16;
+         greenValue = Math.round(greenValue);
+     } else {
+         greenValue = 255;
+         value = value - 255;
+         redValue = 256 - (value * value / 255)
+         redValue = Math.round(redValue);
+     }
+
+     return "#" + intToHex(redValue) + intToHex(greenValue) + "00";
+ }
+
+ var clr = makeColor(100);
+
+ /* 0 <= value <= 100*/
+ function colorString(value) {
+     return "red";
+ }
+
+</script>
+
 <div id="ratingQuality" style="background-color:grey; position:relative; width:90px; height:20px">
-    <%= content_tag :div, style: "background-color:green; position:relative; width:" + review.rating.to_s + "%; height:20px" do %>
+    <%= content_tag :div, id: review.rating.to_s, style: "background-color:green; position:relative; width:" + review.rating.to_s + "%; height:20px" do %>
 	<%= review.rating %>
     <% end %>
 </div>
