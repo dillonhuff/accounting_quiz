@@ -23,8 +23,6 @@
 
 </p>
 
-<p>
-    <%= render 'add_review'  %>
-</p>
 
+<%= link_to 'Add Review', '/new_review/' + @prediction.id.to_s %>
 <%= link_to 'Back', predictions_path %>

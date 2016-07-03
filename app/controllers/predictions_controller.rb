@@ -1,5 +1,5 @@
 class PredictionsController < ApplicationController
-  before_action :set_prediction, only: [:show, :edit, :update, :destroy]
+  before_action :set_prediction, only: [:show, :edit, :update, :destroy, :new_review]
 
   # GET /predictions
   # GET /predictions.json
@@ -11,7 +11,6 @@ class PredictionsController < ApplicationController
   # GET /predictions/1.json
   def show
     @reviews = @prediction.reviews;
-    @review = @prediction.reviews.build()
   end
 
   # GET /predictions/new
@@ -61,6 +60,10 @@ class PredictionsController < ApplicationController
       format.html { redirect_to predictions_url, notice: 'Prediction was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def new_review
+    @review = @prediction.reviews.build()
   end
 
   private

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/events' => 'static_pages#events'
 
   get '/new_prediction/:id', to: 'pundits#new_prediction'
+  get '/new_review/:id', to: 'predictions#new_review'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
