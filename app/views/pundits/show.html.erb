@@ -6,18 +6,16 @@
 </p>
 
 <p>
-    <strong># of predictions:</strong>
-    <%= @pundit.predictions.length %>
-</p>
-
-<p>
-    <% @pundit.predictions.each do |t| %>
-	<%= t.content %>
+    <strong>Predictions:</strong>
 </br>
-    <% end %>
+
+<% @pundit.predictions.each do |t| %>
+    <%= link_to t.content, '/predictions/' + t.id.to_s %>
+</br>
+<% end %>
+
 </p>
 
 <%= render 'add_prediction' %>
 
-<%#= link_to 'Edit', edit_pundit_path(@pundit) %> |
 <%= link_to 'Back', pundits_path %>
