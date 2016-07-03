@@ -12,12 +12,14 @@
 
 <p>
     <strong>Reviews</strong>
+    </br>
     <% @reviews.each do |review| %>
 	<tr>
 	    <td><%= review.rating %></td>
             <td><%= review.content %></td>
 	</tr>
     <% end %>
+</br>
 </p>
 
 <p>
