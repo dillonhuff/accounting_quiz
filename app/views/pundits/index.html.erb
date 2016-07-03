@@ -2,22 +2,12 @@
 
 <h1>Pundits</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @pundits.each do |pundit| %>
-      <tr>
-        <td><%= link_to pundit.name, pundit %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @pundits.each do |pundit| %>
+    <div class="border border-box glassy-bg mt pt">
+        <%= link_to pundit.name, pundit %>
+    </div>
+<% end %>
 
 <br>
 
