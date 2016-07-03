@@ -1,5 +1,5 @@
 class PunditsController < ApplicationController
-  before_action :set_pundit, only: [:show, :edit, :update, :destroy]
+  before_action :set_pundit, only: [:show, :edit, :update, :destroy, :new_prediction]
 
   # GET /pundits
   # GET /pundits.json
@@ -10,7 +10,6 @@ class PunditsController < ApplicationController
   # GET /pundits/1
   # GET /pundits/1.json
   def show
-    @prediction = @pundit.predictions.build()
   end
 
   # GET /pundits/new
@@ -60,6 +59,10 @@ class PunditsController < ApplicationController
       format.html { redirect_to pundits_url, notice: 'Pundit was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def new_prediction
+    @prediction = @pundit.predictions.build()
   end
 
   private

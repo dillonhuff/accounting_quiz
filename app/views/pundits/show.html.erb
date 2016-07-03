@@ -16,6 +16,5 @@
 
 </p>
 
-<%= render 'add_prediction' %>
-
+<%= link_to 'Add Prediction', '/new_prediction/' + @pundit.id.to_s %>
 <%= link_to 'Back', pundits_path %>

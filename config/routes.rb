@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   resources :base_plates
   resources :predictions
   resources :pundits
+
   root 'static_pages#home'
+
   get '/home' => 'static_pages#home'
   get '/about' =>'static_pages#about'
   get '/events' => 'static_pages#events'
+
+  get '/new_prediction/:id', to: 'pundits#new_prediction'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
