@@ -13,10 +13,7 @@
   <tbody>
     <% @pundits.each do |pundit| %>
       <tr>
-        <td><%= pundit.name %></td>
-        <td><%= link_to 'Show', pundit %></td>
-        <!-- <td><%= link_to 'Edit', edit_pundit_path(pundit) %></td> -->
-        <!-- <td><%= link_to 'Destroy', pundit, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%= link_to pundit.name, pundit %></td>
       </tr>
     <% end %>
   </tbody>
