@@ -15,6 +15,7 @@
     </br>
     <% @reviews.each do |review| %>
 	<tr>
+	    <td> <strong> <%= review.title %> </strong></td>
 	    <td> <%= render :partial => 'review', :object => review %> </td>
             <td><%= review.content %></td>
 	</tr>
