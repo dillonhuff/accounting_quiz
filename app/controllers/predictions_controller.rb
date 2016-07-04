@@ -74,6 +74,7 @@ class PredictionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prediction_params
-      params.require(:prediction).permit(:content, :pundit_id)
+      params.require(:prediction).permit(:content, :pundit_id, :all_tags)
     end
+
 end
