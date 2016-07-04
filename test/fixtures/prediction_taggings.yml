@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prediction_id: 
+  tag_id: 
+
+two:
+  prediction_id: 
+  tag_id: 

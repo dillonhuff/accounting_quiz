@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703223437) do
+ActiveRecord::Schema.define(version: 20160704045255) do
 
   create_table "base_plates", force: :cascade do |t|
     t.float    "height"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "prediction_taggings", force: :cascade do |t|
+    t.integer  "prediction_id"
+    t.integer  "tag_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "prediction_taggings", ["prediction_id"], name: "index_prediction_taggings_on_prediction_id"
+  add_index "prediction_taggings", ["tag_id"], name: "index_prediction_taggings_on_tag_id"
 
   create_table "predictions", force: :cascade do |t|
     t.text     "content"
@@ -39,6 +49,12 @@ ActiveRecord::Schema.define(version: 20160703223437) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "title"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
